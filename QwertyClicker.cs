@@ -76,7 +76,7 @@ namespace QwertyClicker
                     try
                     {
                         var WebClient = new WebClient(); // I know this method is obsolete but its better than HttpClient
-                        WebClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/QwertyDevelopment/QwertyClicker/blob/main/Clicks.wav"), Path.GetTempPath() + "\\Clicks.wav");
+                        WebClient.DownloadFileAsync(new Uri("https://raw.githubusercontent.com/QwertyDevelopment/QwertyClicker/main/Clicks.wav"), Path.GetTempPath() + "\\Clicks.wav");
                         LoggerLabel.Text = "Downloading: 0%";
                         WebClient.DownloadProgressChanged += (s, e) =>
                         {
@@ -119,7 +119,7 @@ namespace QwertyClicker
             var WebClient = new WebClient { Encoding = System.Text.Encoding.UTF8 };
             try
             {
-                if (Version.Parse(WebClient.DownloadString("https://raw.githubusercontent.com/QwertyDevelopment/QwertyClicker/blob/main/version.txt")) > Version.Parse(Assembly.GetEntryAssembly().GetName().Version.ToString()))
+                if (Version.Parse(WebClient.DownloadString("https://raw.githubusercontent.com/QwertyDevelopment/QwertyClicker/main/version.txt")) > Version.Parse(Assembly.GetEntryAssembly().GetName().Version.ToString()))
                 {
                     if (NewUpdateDialog.Show() == DialogResult.Yes)
                     {
